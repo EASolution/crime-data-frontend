@@ -34,7 +34,15 @@ const filterNibrsData = (data, { since, until }) => {
   return filtered
 }
 
-const NibrsContainer = ({ crime, dispatch, nibrs, place, since, until }) => {
+const NibrsContainer = ({
+  crime,
+  dispatch,
+  nibrs,
+  place,
+  placeType,
+  since,
+  until,
+}) => {
   const { data, error, loading } = nibrs
 
   const nibrsTerm = (
@@ -63,6 +71,7 @@ const NibrsContainer = ({ crime, dispatch, nibrs, place, since, until }) => {
             <NibrsCard
               crime={crime}
               place={place}
+              placeType={placeType}
               since={nibrsFirstYear}
               until={until}
               {...d}
